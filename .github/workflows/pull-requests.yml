@@ -32,4 +32,4 @@ jobs:
           pip install --upgrade pip
           pip install poetry
       - name: Build and publish to Test PYPI
-        run: poetry publish --dry-run --build -r testpypi
+        run: poetry publish --build -r testpypi
