@@ -1,6 +1,9 @@
 name: Pull-requests to Parallel
 
 on:
+  push:
+    branches:
+      - parallel
   pull_request:
     branches:
       - parallel
