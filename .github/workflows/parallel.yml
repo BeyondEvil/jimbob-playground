@@ -1,4 +1,4 @@
-name: Pull-requests to Master
+name: Pull-requests to Parallel
 
 on:
   pull_request:
