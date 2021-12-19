@@ -1,8 +1,11 @@
 [tool.poetry]
-name = "jimbob-playground"
+name = "jimbob_playground"
 version = "0.1.0"
 description = "Jimbobs Python Playground"
 authors = ["Jim Brännlund <jimbrannlund@fastmail.com>"]
+
+[tool.poetry.scripts]
+useless = 'jimbob_playground.main:main'
 
 [tool.poetry.dependencies]
 python = "^3.9"
