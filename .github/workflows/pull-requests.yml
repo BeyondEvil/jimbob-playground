@@ -24,3 +24,7 @@ jobs:
           dry_run: true
         env:
           GITHUB_TOKEN: ${{ secrets.PAT }}
+      - name: cat
+        run: |
+          ls -la
+          cat pyproject.toml
