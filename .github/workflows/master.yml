@@ -14,7 +14,10 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Hello World
-        run: echo "on pushes to master"
+        run: |
+          echo "on pushes to master"
+          echo ${{ github.ref }}
+          echo ${{ github.ref_name }}
 
   publish:
     needs:
