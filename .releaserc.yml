@@ -1,0 +1,13 @@
+branches:
+  - master
+  - jim/cherry
+plugins:
+  - path: "@semantic-release/commit-analyzer"
+  - path: "@semantic-release/release-notes-generator"
+  - path: "@semantic-release/exec"
+    prepareCmd: "sed -i '' -r -e 's;= \"[0-9]+\\.[0-9]+\\.[0-9]+\";= \"${nextRelease.gitTag}\";g' pyproject.toml"
+  - path: "@semantic-release/git"
+  - path: "@semantic-release/github"
+    assets:
+      - CHANGELOG.md
+      - pyproject.toml
