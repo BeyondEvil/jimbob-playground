@@ -21,7 +21,6 @@ jobs:
             @semantic-release/git@10
             @semantic-release/changelog@6
             @semantic-release/exec@6
-          dry_run: true
         env:
           GITHUB_TOKEN: ${{ secrets.PAT }}
       - name: cat
