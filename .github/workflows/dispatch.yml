@@ -3,11 +3,45 @@ name: Dispatch
 on:
   workflow_dispatch:
     inputs:
+      environment:
+        description: 'Environment to deploy to'
+        type: choice
+        required: true
+        # default: dev
+        options:
+          - dev
+          - test
+          - test_br
+
+      update_vars:
+        description: 'For manual trigger job updating variables'
+        type: choice
+        required: true
+        options:
+          - 'false'
+          - 'true'
+
       max_parallel_deploy_hosts:
         description: 'Max parallel deploy hosts - default for AWS without haproxy'
         type: number
         required: false
-        default: 2
+        default: 1
+
+      api_hosts_names:
+        description: 'API hosts names - default for sweden - used for matrix strategy'
+        type: string
+        required: false
+        default: '["api1","api2"]'
+
+      haproxy_host:
+        description: 'Haproxy load balancer host in Cloudist'
+        type: string
+        required: false
+
+      haproxy_backend_name:
+        description: 'Haproxy backend name used in Cloudist'
+        type: string
+        required: false
 
 jobs:
   maxxie:
