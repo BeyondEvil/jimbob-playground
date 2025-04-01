@@ -1,0 +1,22 @@
+name: Dispatch
+
+on:
+  workflow_dispatch:
+    inputs:
+      max_parallel_deploy_hosts:
+        description: 'Max parallel deploy hosts - default for AWS without haproxy'
+        type: number
+        required: false
+        default: 2
+
+jobs:
+  maxxie:
+    name: Maxxie
+    runs-on: ubuntu-22.04
+    strategy:
+      # max-parallel: ${{ fromJson(inputs.max_parallel_deploy_hosts) }}
+      max-parallel: ${{ inputs.max_parallel_deploy_hosts }}
+      matrix:
+        server: ['one', 'two']
+    steps:
+      - run: echo "Hello, ${{ matrix.server }}"
