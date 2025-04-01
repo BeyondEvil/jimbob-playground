@@ -14,8 +14,8 @@ jobs:
     name: Maxxie
     runs-on: ubuntu-22.04
     strategy:
-      # max-parallel: ${{ fromJson(inputs.max_parallel_deploy_hosts) }}
-      max-parallel: ${{ inputs.max_parallel_deploy_hosts }}
+      max-parallel: ${{ fromJson(inputs.max_parallel_deploy_hosts) }}
+      # max-parallel: ${{ inputs.max_parallel_deploy_hosts }}
       matrix:
         server: ['one', 'two']
     steps:
